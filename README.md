@@ -32,8 +32,7 @@ int main() {
 ```
 
 ## Output:
-
-![image](https://github.com/user-attachments/assets/d6334ea1-13df-47e6-80c5-1510e3c18bfd)
+![exp6_output_crypt](https://github.com/user-attachments/assets/f259fdcc-2577-4b9d-a597-9b9df8489853)
 
 ## Result:
 Thus, the pseudorandom number generation was successfully implemented using the standard library functions srand() and rand().
