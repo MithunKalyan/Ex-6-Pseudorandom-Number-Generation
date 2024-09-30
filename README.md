@@ -1,60 +1,39 @@
 # Ex-6-Pseudorandom-Number-Generation
 
 ## Aim:
-Implementation of Pseudorandom Number Generation Using Standard library
+To implement Pseudorandom Number Generation using the standard library functions in C.
 
 ## Algorithm:
-1.Start.
+1.Seed the random number generator using srand() to initialize it with a starting value.
+2.Generate pseudorandom numbers using rand().
+3.To ensure different results on each execution, seed srand() with a dynamic value like the current time (time(NULL)).
+4.Use modulo operation to limit the range of generated numbers.
 
-2.Import the random module from the Python standard library using import random.
-
-3.Generate a random integer: Use random.randint(a, b) to generate a pseudorandom integer between the range a and b (inclusive).
-
-4.Generate a random floating-point number: Use random.random() to generate a floating-point number between 0 and 1.
-
-5.Generate a random number from a range: Use random.randrange(start, stop, step) to generate a number from a specified range with a step value.
-
-6.Shuffle a list randomly: Create a list and use random.shuffle(list) to randomly shuffle the elements of the list.
-
-7.Select a random element from the list: Use random.choice(list) to pick a random element from the list.
-
-8.Display all the results.
-
-9.End.
-
-## PROGRAM:
+## Program:
 ```
-import random
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-# Generate a pseudorandom integer between 1 and 100
+int main() {
+    // Seed the random number generator with the current time
+    srand(time(0));
 
-random_integer = random.randint(1, 100)
-print(f"Pseudorandom integer: {random_integer}")
+    // Generate and print 5 pseudorandom numbers in the range [0, 99]
+    printf("Pseudorandom numbers:\n");
+    for (int i = 0; i < 5; i++) {
+        int random_number = rand() % 100;  // Limit range to 0-99
+        printf("%d ", random_number);
+    }
+    printf("\n");
 
-# Generate a pseudorandom floating-point number between 0 and 1
-
-random_float = random.random()
-print(f"Pseudorandom float: {random_float}")
-
-# Generate a pseudorandom number from a range with a step
-
-random_range = random.randrange(0, 50, 5)
-print(f"Pseudorandom number from range: {random_range}")
-
-# Shuffle a list of items randomly
-
-items = [1, 2, 3, 4, 5]
-random.shuffle(items)
-print(f"Shuffled list: {items}")
-
-# Generate a pseudorandom choice from a list
-
-random_choice = random.choice(items)
-print(f"Pseudorandom choice from list: {random_choice}")
+    return 0;
+}
 ```
-## OUTPUT:
 
+## Output:
 
+![image](https://github.com/user-attachments/assets/d6334ea1-13df-47e6-80c5-1510e3c18bfd)
 
-## RESULT:
-Thus, pseudorandom number generation using Python's random module was successfully implemented and tested.
+## Result:
+Thus, the pseudorandom number generation was successfully implemented using the standard library functions srand() and rand().
